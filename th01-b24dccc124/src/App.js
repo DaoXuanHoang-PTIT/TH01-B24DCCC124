@@ -3,6 +3,7 @@ import TextCounter from "./th01/bt1/Textcounter";
 import TrafficLight from "./th01/bt2/TrafficLight";
 import TodoList from "./th01/bt3/TodoList";
 import Cart from "./th01/bt4/Cart";
+import RegisterForm from "./th01/bt5/RegisterForm";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
 
       <h2>Bài 4: Giỏ hàng</h2>
       <Cart />
+
+      <h2>Bài 5: Form Đăng ký</h2>
+      <RegisterForm />  
     </div>
   );
 }
