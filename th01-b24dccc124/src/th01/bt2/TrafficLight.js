@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function TrafficLight() {
-  // Thứ tự: đỏ -> xanh -> vàng
   const lights = ["red", "green", "yellow"];
   const [current, setCurrent] = useState(0);
 
-  // Hàm đổi đèn khi bấm nút
+  // Tự động chuyển đèn sau mỗi 2 giây
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % lights.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   const nextLight = () => {
     setCurrent((prev) => (prev + 1) % lights.length);
   };
